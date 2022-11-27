@@ -1,0 +1,200 @@
+\newpage 
+\section*{\LARGE Chapter 1: Preliminaries}
+\addcontentsline{toc}{section}{\protect\textbf{\LARGE Chapter 1: Preliminaries}}
+\section{What Is This Book About?}
+\quad Nội dung chính của sách trình bày về các vấn đề liên quan đến thao tác, xử lý, làm sạch và bẻ khóa dữ liệu bằng Python. Qua đó giới thiệu thiết thực, hiện đại về tính toán khoa học bằng Python, được điều chỉnh cho các ứng dụng sử dụng nhiều dữ liệu. Đây là cuốn sách về các phần của ngôn ngữ Python và các thư viện mà bạn sẽ cần để giải quyết hiệu quả một loạt các vấn đề phân tích dữ liệu. Nó không phải chỉ là một giải thích về các phương pháp phân tích sử dụng Python làm ngôn ngữ triển khai.
+Trọng tâm chính là dữ liệu có cấu trúc, một thuật ngữ mơ hồ có chủ ý bao gồm nhiều dạng dữ liệu phổ biến khác nhau, chẳng hạn như :\par
+• Mảng đa chiều (ma trận)\par
+• Dữ liệu dạng bảng hoặc dạng bảng tính trong đó mỗi cột có thể là một kiểu khác nhau (chuỗi, số, ngày tháng hoặc cách khác). Điều này bao gồm hầu hết các loại dữ liệu thường được lưu trữ trong cơ sở dữ liệu quan hệ hoặc tệp văn bản được phân tách bằng tab hoặc dấu phẩy\par
+• Nhiều bảng dữ liệu có liên quan với nhau bởi các cột khóa (những gì sẽ là khóa chính hoặc khóa ngoại cho người dùng SQL)\par
+• Chuỗi thời gian cách đều hoặc không đều nhau\par
+Đây không thể nào là một bản danh sách hoàn thiện. Mặc dù nó có thể không phải lúc nào cũng rõ ràng, nhưng một tỷ lệ lớn các tập dữ liệu có thể được chuyển đổi thành một dạng có cấu trúc phù hợp hơn cho việc phân tích và mô hình hóa. \par
+Ví dụ: một tập hợp các bài báo có thể được xử lý thành một bảng tần suất từ, sau đó có thể được sử dụng để thực hiện phân tích cảm xúc. Hầu hết người dùng các chương trình bảng tính như Microsoft Excel, có lẽ là công cụ phân tích dữ liệu được sử dụng rộng rãi nhất trên thế giới, sẽ không xa lạ với những loại dữ liệu này
+\section{Why Python for Data Analysis}
+\quad Ngôn ngữ Python rất dễ được yêu thích. Kể từ lần đầu tiên xuất hiện vào năm 1991, Python đã trở thành một trong những ngôn ngữ lập trình động, phổ biến nhất, cùng với Perl, Ruby và các ngôn ngữ khác. Python và Ruby đã trở nên đặc biệt phổ biến trong những năm gần đây để xây dựng các trang web bằng cách sử dụng nhiều khuôn khổ web của họ, như Rails (Ruby) và Django (Python).\par
+Ngôn ngữ Python thường được gọi là ngôn ngữ kịch bản vì chúng có thể được sử dụng để viết các chương trình nhỏ hoặc tập lệnh nhanh chóng và ngắn gọn.\par
+Python được phân biệt bởi cộng đồng máy tính khoa học lớn và tích cực của nó. Việc áp dụng Python cho tính toán khoa học trong cả các ứng dụng công nghiệp và nghiên cứu học thuật đã tăng lên đáng kể kể từ đầu những năm 2000. Đối với phân tích dữ liệu và tính toán tương tác, khám phá và trực quan hóa dữ liệu, Python chắc chắn sẽ so sánh với nhiều ngôn ngữ và công cụ lập trình thương mại và mã nguồn mở dành riêng cho miền cụ thể đang được sử dụng rộng rãi, chẳng hạn như R, MATLAB, SAS, Stata,..
+Trong những năm gần đây, hỗ trợ thư viện được cải thiện của Python (chủ yếu là Pandas) đã khiến nó trở thành một giải pháp thay thế mạnh mẽ cho các tác vụ thao tác dữ liệu. Kết hợp với sức mạnh của Python trong lập trình mục đích chung, nó là một lựa chọn tuyệt vời như một ngôn ngữ duy nhất để xây dựng các ứng dụng tập trung vào dữ liệu
+\subsection{Python as Glue}
+\quad Sự thành công của Python với tư cách là một nền tảng máy tính khoa học là sự dễ dàng tích hợp mã C, C ++ và FORTRAN. Hầu hết các môi trường máy tính hiện đại đều chia sẻ một bộ thư viện FORTRAN và C kế thừa tương tự để thực hiện đại số tuyến tính, tối ưu hóa, tích hợp, biến đổi fourier nhanh và các thuật toán khác.\par
+Trong nhiều trường hợp, thời gian thực hiện của “glue code” không đáng kể; nỗ lực được đầu tư hiệu quả nhất vào việc tối ưu hóa các nút thắt trong tính toán, đôi khi bằng cách chuyển mã sang ngôn ngữ cấp thấp hơn như C. Trong vài năm qua, dự án Cython (http://cython.org) đã trở thành một trong những cách được ưa thích của cả việc tạo các phần mở rộng được biên dịch nhanh chóng cho Python và cũng như giao tiếp với mã C và C ++.\par
+
+\subsection{Solving the “Two-Language” Problem}
+\quad Trong nhiều tổ chức, người ta thường nghiên cứu, tạo nguyên mẫu và thử nghiệm các ý tưởng mới bằng cách sử dụng ngôn ngữ máy tính dành riêng cho miền cụ thể hơn như MATLAB hoặc R, sau đó chuyển những ý tưởng đó thành một phần của hệ thống sản xuất lớn hơn được viết bằng Java, C sharp, hoặc C++. Điều mà mọi người ngày càng nhận thấy rằng Python là một ngôn ngữ phù hợp không chỉ để thực hiện nghiên cứu và tạo mẫu mà còn để xây dựng các hệ thống sản xuất. Vì vậy ngày càng nhiều công ty sẽ đi theo con đường này vì tổ chức thường có những lợi ích đáng kể khi cả nhà khoa học và nhà công nghệ sử dụng cùng một bộ công cụ lập trình.
+
+\subsection{Why Not Python?}
+\quad Mặc dù Python là một môi trường tuyệt vời để xây dựng các ứng dụng khoa học chuyên sâu về tính toán và xây dựng hầu hết các loại hệ thống có mục đích chung, nhưng có một số cách sử dụng Python có thể ít phù hợp hơn.\par
+- Python là một ngôn ngữ lập trình thông dịch, nói chung hầu hết mã Python sẽ chạy chậm hơn đáng kể so với mã được viết bằng ngôn ngữ biên dịch như Java hoặc C ++\par
+- Thời gian của lập trình viên thường có giá trị hơn thời gian của CPU, nhiều người rất vui khi thực hiện sự cân bằng này
+Python không phải là ngôn ngữ lý tưởng cho các ứng dụng đa luồng, đồng thời cao, đặc biệt là các ứng dụng có nhiều luồng ràng buộc CPU.\par
+- Lý do cho điều này là nó có cái được gọi là khóa thông dịch toàn cầu (GIL), một cơ chế ngăn trình thông dịch thực thi nhiều hơn một lệnh byte bytecode của Python cùng một lúc.\par
+- Các lý do kỹ thuật giải thích tại sao GIL tồn tại nằm ngoài phạm vi của cuốn sách này, nhưng kể từ
+cách viết này dường như không có khả năng GIL sẽ sớm biến mất \newline
+=> Điều này không có nghĩa là Python không thể thực thi mã song song, đa luồng thực sự; mã đó không thể được thực thi trong một quy trình Python duy nhất\newline
+Ví dụ, dự án Cython có tính năng tích hợp dễ dàng với OpenMP, một khuôn khổ C cho tính toán song song, để song song hóa các vòng lặp và do đó tăng tốc đáng kể các thuật toán số.
+\section{Essential Python Libraries}
+\subsection{NumPy}
+\quad Numpy là gói nền tảng cho tính toán khoa học bằng Python. Nó cung cấp một số phương pháp tính toán như:\par
+- nparray cho phép làm việc với đối tượng mảng đa chiều nhanh chóng và hiệu quả\par
+- Các hàm để thực hiện các phép tính thông minh phần tử với các mảng hoặc phép toán giữa các mảng\par
+- Các công cụ để đọc và ghi các tập dữ liệu dựa trên mảng vào đĩa\par
+- Các phép toán đại số tuyến tính, biến đổi Fourier và tạo số ngẫu nhiên\par
+- Các công cụ để tích hợp kết nối mã C, C ++ và Fortran với Python\par
+- Đối với dữ liệu số, mảng NumPy là cách lưu trữ và thao tác dữ liệu hiệu quả hơn nhiều so với các cấu trúc dữ liệu Python tích hợp sẵn khác. Ngoài ra, các thư viện được viết bằng ngôn ngữ cấp thấp hơn, chẳng hạn như C hoặc Fortran, có thể hoạt động trên dữ liệu được lưu trữ trong mảng NumPy mà không cần sao chép bất kỳ dữ liệu nào.
+\subsection{Pandas}
+\quad Pandas cung cấp cấu trúc dữ liệu phong phú và các chức năng được thiết kế để làm việc với dữ liệu có cấu trúc nhanh chóng, dễ dàng và biểu đạt giúp cho Python trở thành một môi trường phân tích dữ liệu hiệu quả và mạnh mẽ.\par
+Đối tượng chính của gấu trúc sẽ được sử dụng trong cuốn sách này là DataFrame, một cấu trúc dữ liệu hướng cột, dạng bảng hai lần với cả nhãn hàng và cột: gấu trúc kết hợp các tính năng tính toán mảng hiệu suất cao của NumPy với khả năng thao tác dữ liệu linh hoạt của bảng tính và cơ sở dữ liệu quan hệ (chẳng hạn như SQL).\par
+Nó cung cấp chức năng lập chỉ mục phức tạp để giúp dễ dàng định hình lại, cắt và xúc xắc, thực hiện tổng hợp và chọn tập hợp con dữ liệu,pandas có chức năng chuỗi thời gian phong phú, hiệu suất cao và các công cụ rất phù hợp để làm việc với dữ liệu tài chính\par
+Đối với người dùng ngôn ngữ R cho tính toán thống kê, tên DataFrame sẽ quen thuộc, vì đối tượng được đặt tên theo đối tượng R data.frame tương tự. Tuy nhiên, chúng không giống nhau; chức năng được cung cấp bởi data.frame trong R về cơ bản là một tập hợp con nghiêm ngặt của chức năng do gấu trúc DataFrame cung cấp
+\subsection{Matplotlib}
+\quad Matplotlib là thư viện Python phổ biến nhất để tạo ra các lô và các hình ảnh hóa dữ liệu 2D khác. Ban đầu nó được tạo ra bởi John D.Hunter (JDH) và hiện được duy trì bởi một nhóm lớn các nhà phát triển. Nó rất phù hợp để tạo ra các ô phù hợp cho việc xuất bản. Nó tích hợp tốt với IPython, do đó cung cấp một môi trường tương tác thoải mái để vẽ và khám phá dữ liệu.Giúp người dùng có thể trực quan hóa dữ liệu một cachs dễ dàng và nhanh chóng.
+
+\subsection{IPython}
+\quad IPython là thành phần trong bộ công cụ Python khoa học tiêu chuẩn liên kết mọi thứ với nhau. Nó cung cấp một môi trường mạnh mẽ và hiệu quả cho tính toán tương tác và khám phá. Nó là một trình bao Python nâng cao được thiết kế để tăng tốc quá trình viết, thử nghiệm và gỡ lỗi mã Python. Nó đặc biệt hữu ích để làm việc tương tác với dữ liệu và trực quan hóa dữ liệu với matplotlib.\par
+- Một sổ ghi chép HTML giống như Mathematica để kết nối với IPython thông qua web
+trình duyệt.\par
+- Bảng điều khiển GUI dựa trên khung Qt với tính năng vẽ nội tuyến, chỉnh sửa đa dòng và tô sáng cú pháp\par
+- Cơ sở hạ tầng cho tính toán song song và phân tán tương tác
+\subsection{SciPy}
+\quad SciPy là một tập hợp các gói giải quyết một số lĩnh vực vấn đề tiêu chuẩn khác nhau trong máy tính khoa học. Đây là một mẫu của các gói bao gồm:\par
+- scipy.integrate: quy trình tích phân số và trình giải phương trình vi phân\par
+- scipy.linalg: quy trình đại số tuyến tính và phân rã ma trận mở rộng ra ngoài những quy trình được cung cấp trong numpy.linalg.\par
+- scipy.optimize: bộ tối ưu hóa chức năng (bộ thu nhỏ) và thuật toán tìm gốc\par
+- scipy.signal: công cụ xử lý tín hiệu\par
+- scipy.sparse: ma trận thưa thớt và bộ giải hệ thống tuyến tính thưa thớt\par
+- scipy.special: wrapper xung quanh SPECFUN, một thư viện Fortran triển khai nhiều hàm toán học phổ biến, chẳng hạn như hàm gamma\par
+- scipy.stats: phân phối xác suất liên tục và rời rạc tiêu chuẩn (hàm mật độ, bộ lấy mẫu, hàm phân phối liên tục), các thử nghiệm thống kê khác nhau và nhiều thống kê mô tả hơn\par
+- scipy.weave: công cụ sử dụng mã C ++ nội tuyến để tăng tốc tính toán mảng\\
+=> Sẽ hiệu quả hơn khi kết hợp cùng với matplotlib và SciPy
+\section{Installation and Setup}
+Enthought Python Distribution: một bản phân phối Python theo hướng khoa học từ Enthought. Điều này bao gồm EPDFree, một bản phân phối khoa học cơ sở miễn phí (với NumPy, SciPy, matplotlib, Chaco và IPython) và EPD Full, một bộ toàn diện gồm hơn 100 gói khoa học trên nhiều lĩnh vực. EPD Full miễn phí để sử dụng trong học tập nhưng có đăng ký hàng năm cho người dùng phi học tập.\par
+Python (x, y) (http://pythonxy.googlecode.com): Bản phân phối Python hướng khoa học miễn phí dành cho Windows.\par
+Tôi sẽ sử dụng EPDFree cho các hướng dẫn cài đặt, mặc dù vậy bạn có thể thực hiện một cách tiếp cận khác tùy thuộc vào nhu cầu của mình. Tại thời điểm viết bài này, EPD bao gồm Python 2.7, mặc dù điều này có thể thay đổi vào một số thời điểm trong tương lai.Sau khi cài đặt bạn sẽ có: \par
+Scientific Python base: NumPy, SciPy, matplotlib, and IPython. These are all included in EPDFree.\par
+- IPython Notebook dependencies: tornado and pyzmq. These are included in EPDFree.\par
+- pandas (version 0.8.2 or higher).\par
+Các thư viện không nên tải tất cả về máy vì có những thư viện chắc hẳn bạn sẽ không bao giờ dùng đến.
+\begin{lstlisting}[language=bash]
+  $ pip install
+\end{lstlisting}
+
+\subsection{Windows}
+\quad Để bắt đầu trên Windows, ta cần vào trang chủ của Python \url{https://www.python.org/}, sau đó chọn phần Downloads và nhập chọn Python 3.7.1 để tải.\par
+Ta chạy file python-3.7.1.exe, click chọn ô Add Python 3.7 to PATH (để có thể chạy lệnh Python trên CMD, Powershell trên Windows) và chọn Install Now để bắt đầu tiến trình cài đặt.\par
+Khi cửa sổ hiển thị Setup was Successful là ta đã cài đặt thành công.\par
+Nếu muốn kiểm tra, ta vào thanh tìm kiếm của Windows, gõ lệnh Command Prompt, trong cửa sổ CMD, ta gõ lệnh python để hiển thị phiên bản Python đã cài đặt.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image1.png}
+\end{figure}\par
+ Nếu tồn tại một phiên bản EPD khác hoặc không hoạt động, ta cần dọn sạch các biến môi trường Windows. Trên Windows 7, ta nhập "enviroment variables" trong thanh tìm kiếm, chọn Edit enviroment variables cho tài khoản của bạn. Trên Windows XP, ta vào Control Panel > System > Advanced > Enviroment Variables. Trên cửa sổ hiện lên, ta tìm Path variable, nó cần hai thư mục đi kèm đường dẫn, ngăn cách bởi dấu chấm phẩy:
+ \begin{figure}[h]
+    \centering
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image2.png}
+\end{figure}\par
+Sau khi cài đặt Python, ta có thể cài đặt pandas từ http://pypi.python.org/pypi/pandas. Đối cới EPDFree sẽ là ơandas-0.9.0.win32-py2.7.exe. Sau khi cài đặt xong, hãy khởi chạy IPython và kiểm tra bằng cách import pandas và tạo một biểu đồ matplotlib đơn giản:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image3.png}
+\end{figure}\par
+EPDFree trên Windows chỉ chứa tệp 32-bit. Nếu muốn 64-bit, ta có thể dùng EPD Full. 
+\subsection{Apple OS X}\par
+\quad Để bắt đầu với OS X, ta cần cài đặt Xcode, bao gồm gcc C và bộ biên dịch C++. Ta có thể tìm thấy trình cài đặt Xcode trên DVD đi kèm với máy tính hoặc tải trực tiếp từ Apple.\par
+Khi đã cài đặt Xcode, hãy khởi chạy thiết bị đầu cuối (Terminal.app) bằng cách vào Applications > Utilities. Nhập gcc và nhấn enter. Thông báo sẽ hiện lên:\par
+\begin{center}
+    \includegraphics[width=\textwidth]{viet_image/Thang_image/thang_image5.png}
+\end{center}
+    
+\quad Bây giờ ta cần cài đặt EPDFree. Tên file sẽ là epd\_free-7.3-1-macosx-i386.dmg. Vào file và khởi chạy file .mpkg để cài đặt.
+Sau khi cài đặt xong, một đường dẫn EPDFree vào tên tệp .bash\_profile. Chúng nằm ở /User/your\_name/.bash\_profile\par
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image6.png}\par
+\end{center}
+\quad Đến bước cài đặt pandas. Gõ lệnh sau đây trong terminal:\par
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image7.png}\par
+\end{center}
+    
+Để xác minh mọi thứ đang hoạt động, ta khởi chạy IPython ở chế độ Pylab và kiểm tra việc thêm thư viện pandas sau đó tạo một biểu đồ:\par
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image8.png}\par
+\end{center}
+
+\subsection{GNU/Linux}\par
+\quad Các hệ thống GNU/Linux dựa trên Ubuntu và Mint. Thiết lập tương tự như OS X với ngoại lệ là cách cài đặt EPDFree. Trình cài đặt là một tập lệnh được thực hiện ở thiết bị đầu cuối. Tùy thuộc vào việc ta có hệ thống 32 bit hay 64 bit mà ta cần cài trình cài đặt x86 (32 bit) hoặc x86\_64 (64 bit). Sau đó ta sẽ có một tệp có tên tương tự như epd\_free-7.3-1-rh5-x86\_64.sh. Để cài đặt nó, ta dùng lệnh sau:
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image9 (2).png}\par
+Sau khi cài đặt hoàn tất, ta cần thêm thư mục bin của EPDFRee vào biến Path. Nếu ta đang dùng bash shell (ví dụ như mặc định trong Ubuntu) thì đây là phần bổ sung đường dẫn sau vào .bashrc (với wesm là tên người dùng):\par
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image11.png}\par
+\end{center}
+Ta cần một trình biên dịch C chẳng hạn như gcc, nhiều phiên bản Linux bao gồm gcc, nhưng một số thì không. Trên hệ thống Debian, ta có thể cài đặt gcc như sau:\par
+sudo apt-get install gcc\par
+Nếu ta gõ gcc trong comd, sẽ có thông báo như sau:
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image12.png}\par
+\end{center}
+Bây giờ, ta cài đặt pandas:
+\begin{center}
+    \includegraphics[width=
+    \textwidth]{viet_image/Thang_image/thang_image13.png}\par
+\end{center}
+
+Nếu đã cài đặt EPDFree, ta có thể cần thêm sudo vào lệnh và nhập mật khẩu sudo hoặc root. Để xác minh mọi thứ đang hoạt động, hãy thực hiện kiểm tra tương tự như trong phần OS X.
+\subsection{Python 2 and Python 3}\par
+\quad Cộng đồng Python đang chuyển từ Python 2 sang Python 3. Tác giả viết cuốn sách này với nền tảng là Python 3.7
+\subsection{Integrated Development Enviroments (IDEs)}\par
+\quad Các thư viện như pandas và NumPy được thiết kế để dễ sử dụng trong trình vỏ bọc. Tuy nhiên, một số vẫn muốn làm việc trong IDE thay vì trình soạn thảo văn bản.Sau đây là một vài điều ta có thể khám phá:\par
+• Eclipse với PyDev\par 
+• Plugin\par
+• Python Tools for Visual Studio (for Windows users)\par
+• PyCharm\par
+• Spyder\par
+• Komodo IDE\par
+\section{Community và Conferences}\par
+\quad Ngoài tìm kiến trên Internet, vẫn có vài thứ hữu ích để xem như:\par
+• Pydata: Một nhóm Google dành cho các câu hỏi liên quan đến Python để phân tích dữ liệu và pandas.\par
+• Pystatsmodels: Dàn cho các câu hỏi liên quan đến mô hình thống kê hoặc pandas.\par
+• Scipy-user: Dành cho các câu hỏi chung về SciPy hoặc khoa học Python.\par
+SciPy và EuroSciPy là các hội nghị Python theo định hướng khoa học mà ta có thể tìm thấy nhiều điều thú vị về Python cho khoa học dữ liệu nếu tham gia.
+\section{Navigating This Book}
+\quad Nếu chưa bao giờ lập trình bằng Python, ta có thể bắt đầu từ cuối cuốn sách, nơi có các cú pháp Python, một ngôn ngữ thiên về tính năng và cấu trúc dữ liệu tích hợp như tuples, lists và dicts. Đây là kiến thức căn bản sẽ là cơ sở cho toàn bộ cuốn sách này.\par
+Cuốn sách bắt đầu với môi trường Python. Tiếp theo là đoạn về các tính năng chính của NumPy. Sau đó nữa là pandas và phân tích dữ liệu bằng pandas, NumPy và matplotlib để trực quan hóa dữ liệu.\par
+Các file dữ liệu và các tài liệu liên quan cho mỗi chương được lưu trên GitHub: \par http://github.com/pydata/pydata-book\par
+Tác giả khuyến khích người đọc tải xuống dữ lệu và dùng nó để thực hiện các ví dụ trong cuốn sách, đồng thời sẵn sàng ghi nhận các ý kiến đóng góp từ mọi người.\par
+\subsection{Code Examples}\par
+\quad Hầu hết các ví dụ về code trong cuốn sách được trình bày với input và output giống như khi nó được thực thi trong IPython shell.\par
+In [5]: code\par
+Output[5]: output\par
+Đôi khi, để rõ ràng, nhiều ví dụ sẽ được đặt cạnh nhau, và chúng nên được đọc từ trái sang phải.\par
+In[5]: code\quad \quad In[6]: code2\par
+Out[5]: output\quad Out[6]: output2\par
+\subsection{Data for Examples}
+\quad Bộ dữ liệu cho các ví dụ trong mỗi chương được lưu trên GitHub:\par http://github.com/pydata/pydata-book. \par
+Ta có thể dùng  bằng cách tải về tệp file zip.\par
+Nếu có bất kì thắc mắc nào, vui lòng gửi cho tác giả qua email: wesmckinn@gmail.com.
+
+\subsection{Import Conventions}
+\quad Cộng đồng python đã áp dụng một số quy ước đặt tên cho các module phổ biến:\par
+import numpy as np\par
+import pandas as pd\par
+import matplotlib.pyplot as plt\par
+Điều này có nghĩa rằng, khi ta thấy np.arange, thì đây là tham chiếu đến hàm arange trong NumPy.
+\subsection{Jargon}\par
+
+\quad \quad \textit{Munge/Munging/Wrangling}\par
+Mô tả toàn bộ quá trình xử lí dữ liệu phi cấu trúc hoặc lộn xộn thành một hình thức có cấu trúc và sạch sẽ.
+
+\textit{Pseudocode}
+Mô tả một thuật toán hoặc quy tình có dạng tương tự code nhưng chưa hẳn là một mã nguồn hợp lệ.
+
+\textit{Syntactic sugar}\par
+Cú pháp lập trình không có các tính năng mới, nhưng thuận tiện hơn hoặc dễ dàng để gõ hơn.
